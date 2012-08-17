@@ -1,0 +1,66 @@
+BEGIN_FUNCTION_MAP
+	.FuncBiz,ASFO주문계좌잔고평가손익내역조,TFO6159R,ATTR,DIGSIGN=0,RECLEN=4,SERVERNO=C,VERSION=00000001,CREATER=skcc1016,CREDATE=20111117,JOURNALLOG=0;
+	BEGIN_DATA_MAP
+	TFO6159RI1, TFO6159RI1, input, attr;
+	begin
+		종합계좌번호, CANO, CANO, string, 8, 0, 0, 8, , attr, ;
+		계좌상품코드, ACNT_PRDT_CD, ACNT_PRDT_CD, string, 2, 0, 0, 2, , attr, ;
+		계좌비밀번호, ACNT_PWD, ACNT_PWD, string, 32, 0, 0, 32, , attr, ;
+		증거금구분, MGNA_DVSN, MGNA_DVSN, string, 2, 0, 0, 2, , attr, ;
+		정산상태코드, EXCC_STAT_CD, EXCC_STAT_CD, string, 1, 0, 0, 1, , attr, ;
+		연속조회검색조건200, CTX_AREA_FK200, CTX_AREA_FK200, string, 200, 0, 0, 200, , attr, ;
+		연속조회키200, CTX_AREA_NK200, CTX_AREA_NK200, string, 200, 0, 0, 200, , attr, ;
+	end
+	OCCURS_OUT1, OCCURS_OUT1, output, occurs, attr;
+	begin
+		종합계좌번호, CANO, CANO, string, 8, 0, 0, 8, , attr, ;
+		계좌상품코드, ACNT_PRDT_CD, ACNT_PRDT_CD, string, 2, 0, 0, 2, , attr, ;
+		상품번호, PDNO, PDNO, string, 12, 0, 0, 12, , attr, ;
+		상품유형코드, PRDT_TYPE_CD, PRDT_TYPE_CD, string, 3, 0, 0, 3, , attr, ;
+		단축상품번호, SHTN_PDNO, SHTN_PDNO, string, 12, 0, 0, 12, , attr, ;
+		상품명, PRDT_NAME, PRDT_NAME, string, 60, 0, 0, 60, , attr, ;
+		매도매수구분명, SLL_BUY_DVSN_NAME, SLL_BUY_DVSN_NAME, string, 4, 0, 0, 4, , attr, ;
+		잔고수량1, CBLC_QTY1, CBLC_QTY1, long, 4, 0, 0, 10, , attr, ;
+		정산단가, EXCC_UNPR, EXCC_UNPR, double, 8, 0, 0, 23.8, , attr, ;
+		체결평균단가1, CCLD_AVG_UNPR1, CCLD_AVG_UNPR1, double, 8, 0, 0, 23.8, , attr, ;
+		지수종가, IDX_CLPR, IDX_CLPR, double, 8, 0, 0, 23.8, , attr, ;
+		매입금액, PCHS_AMT, PCHS_AMT, int64, 8, 0, 0, 19, , attr, ;
+		평가금액, EVLU_AMT, EVLU_AMT, int64, 8, 0, 0, 19, , attr, ;
+		평가손익금액, EVLU_PFLS_AMT, EVLU_PFLS_AMT, int64, 8, 0, 0, 19, , attr, ;
+		매매손익금액, TRAD_PFLS_AMT, TRAD_PFLS_AMT, int64, 8, 0, 0, 19, , attr, ;
+		청산가능수량, LQD_PSBL_QTY, LQD_PSBL_QTY, int64, 8, 0, 0, 19, , attr, ;
+	end
+	TFO6159RO3, TFO6159RO3, output, attr;
+	begin
+		예수금현금, DNCA_CASH, DNCA_CASH, int64, 8, 0, 0, 19, , attr, ;
+		외화예수금액, FRCR_DNCL_AMT, FRCR_DNCL_AMT, int64, 8, 0, 0, 19, , attr, ;
+		예수금대용, DNCA_SBST, DNCA_SBST, int64, 8, 0, 0, 19, , attr, ;
+		총예수금액, TOT_DNCL_AMT, TOT_DNCL_AMT, int64, 8, 0, 0, 19, , attr, ;
+		총체결금액, TOT_CCLD_AMT, TOT_CCLD_AMT, int64, 8, 0, 0, 19, , attr, ;
+		현금증거금, CASH_MGNA, CASH_MGNA, int64, 8, 0, 0, 19, , attr, ;
+		대용증거금, SBST_MGNA, SBST_MGNA, int64, 8, 0, 0, 19, , attr, ;
+		증거금총액, MGNA_TOTA, MGNA_TOTA, int64, 8, 0, 0, 19, , attr, ;
+		옵션차금, OPT_DFPA, OPT_DFPA, int64, 8, 0, 0, 19, , attr, ;
+		당일차금, THDT_DFPA, THDT_DFPA, int64, 8, 0, 0, 19, , attr, ;
+		갱신차금, RNWL_DFPA, RNWL_DFPA, int64, 8, 0, 0, 19, , attr, ;
+		수수료, FEE, FEE, int64, 8, 0, 0, 19, , attr, ;
+		익일예수금, NXDY_DNCA, NXDY_DNCA, int64, 8, 0, 0, 19, , attr, ;
+		익일예수금액, NXDY_DNCL_AMT, NXDY_DNCL_AMT, int64, 8, 0, 0, 19, , attr, ;
+		추정예탁자산, PRSM_DPAST, PRSM_DPAST, int64, 8, 0, 0, 19, , attr, ;
+		추정예탁자산금액, PRSM_DPAST_AMT, PRSM_DPAST_AMT, int64, 8, 0, 0, 19, , attr, ;
+		적정주문가능현금, PPRT_ORD_PSBL_CASH, PPRT_ORD_PSBL_CASH, int64, 8, 0, 0, 19, , attr, ;
+		추가증거금현금, ADD_MGNA_CASH, ADD_MGNA_CASH, int64, 8, 0, 0, 19, , attr, ;
+		추가증거금총액, ADD_MGNA_TOTA, ADD_MGNA_TOTA, int64, 8, 0, 0, 19, , attr, ;
+		선물매매손익금액, FUTR_TRAD_PFLS_AMT, FUTR_TRAD_PFLS_AMT, int64, 8, 0, 0, 19, , attr, ;
+		옵션매매손익금액, OPT_TRAD_PFLS_AMT, OPT_TRAD_PFLS_AMT, int64, 8, 0, 0, 19, , attr, ;
+		선물평가손익금액, FUTR_EVLU_PFLS_AMT, FUTR_EVLU_PFLS_AMT, int64, 8, 0, 0, 19, , attr, ;
+		옵션평가손익금액, OPT_EVLU_PFLS_AMT, OPT_EVLU_PFLS_AMT, int64, 8, 0, 0, 19, , attr, ;
+		매매손익금액합계, TRAD_PFLS_AMT_SMTL, TRAD_PFLS_AMT_SMTL, int64, 8, 0, 0, 19, , attr, ;
+		평가손익금액합계, EVLU_PFLS_AMT_SMTL, EVLU_PFLS_AMT_SMTL, int64, 8, 0, 0, 19, , attr, ;
+		인출가능총금액, WDRW_PSBL_TOT_AMT, WDRW_PSBL_TOT_AMT, int64, 8, 0, 0, 19, , attr, ;
+		주문가능현금, ORD_PSBL_CASH, ORD_PSBL_CASH, int64, 8, 0, 0, 19, , attr, ;
+		주문가능대용, ORD_PSBL_SBST, ORD_PSBL_SBST, int64, 8, 0, 0, 19, , attr, ;
+		주문가능총액, ORD_PSBL_TOTA, ORD_PSBL_TOTA, int64, 8, 0, 0, 19, , attr, ;
+	end
+	END_DATA_MAP
+END_FUNCTION_MAP

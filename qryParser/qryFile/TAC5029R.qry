@@ -1,0 +1,23 @@
+BEGIN_FUNCTION_MAP
+	.FuncBiz,ASAC종합계좌계좌명조회,TAC5029R,ATTR,DIGSIGN=0,RECLEN=4,SERVERNO=C,VERSION=00000001,CREATER=Nexcore MD,CREDATE=20100614,JOURNALLOG=0;
+	BEGIN_DATA_MAP
+	TAC5029RI1, TAC5029RI1, input, attr;
+	begin
+		종합계좌번호, CANO, CANO, string, 8, 0, 0, 8, , attr, ;
+		계좌상품코드, ACNT_PRDT_CD, ACNT_PRDT_CD, string, 2, 0, 0, 2, , attr, ;
+		계좌비밀번호, ACNT_PWD, ACNT_PWD, string, 32, 0, 0, 32, , attr, ;
+		비밀번호체크여부, PWD_CHK_YN, PWD_CHK_YN, string, 1, 0, 0, 1, , attr, ;
+	end
+	TAC5029RO2, TAC5029RO2, output, attr;
+	begin
+		고객번호, CSNO, CSNO, string, 9, 0, 0, 9, , attr, ;
+		계좌명2, ACNT_NAME2, ACNT_NAME2, string, 200, 0, 0, 200, , attr, ;
+		개설지점, OPEN_BRCH, OPEN_BRCH, string, 5, 0, 0, 5, , attr, ;
+		개설지점명, OPEN_BRCH_NAME, OPEN_BRCH_NAME, string, 60, 0, 0, 60, , attr, ;
+		계좌관리지점, ACNT_ADMN_BRCH, ACNT_ADMN_BRCH, string, 6, 0, 0, 6, , attr, ;
+		계좌관리지점명, ACNT_ADMN_BRCH_NAME, ACNT_ADMN_BRCH_NAME, string, 60, 0, 0, 60, , attr, ;
+		조직번호명, ORG_NO_NAME, ORG_NO_NAME, string, 66, 0, 0, 66, , attr, ;
+		고객등급코드명, CUST_GRAD_CD_NAME, CUST_GRAD_CD_NAME, string, 60, 0, 0, 60, , attr, ;
+	end
+	END_DATA_MAP
+END_FUNCTION_MAP
