@@ -104,7 +104,10 @@ public class makeXMLfile {
 		for(int i=0;i<size;i++){
 			fieldData temp;
 			temp = box.get(i);
-			buf.append(setvalue(temp.fileSize, temp.fileName));
+			if(!temp.fileType.equals("string"))
+				buf.append(setvalue(temp.fileSize, temp.fileName, temp.fileType));
+			else
+				buf.append(setvalue(temp.fileSize, temp.fileName));
 			if(isAttr)
 				buf.append(setAttrr);
 		}
@@ -122,7 +125,10 @@ public class makeXMLfile {
 		for(int i=0;i<size;i++){
 			fieldData temp;
 			temp = box.get(i);
-			buf.append(getvalue(temp.fileSize, temp.fileName));
+			if(!temp.fileType.equals("string"))
+				buf.append(getvalue(temp.fileSize, temp.fileName, temp.fileType));
+			else
+				buf.append(getvalue(temp.fileSize, temp.fileName));
 			if(isAttr)
 				buf.append(getAttrr);
 		}
@@ -136,11 +142,20 @@ public class makeXMLfile {
 		return result;
 	}
 	
+	public String setvalue(String num, String name, String type){
+		String result = "\t\t\t<set length=\"" + num + "\" name=" + "\"" + name + "\" type=\"" + type + "\">" + "</set>\n";
+		return result;
+	}
 	public String getvalue(String num, String name){
 		String result = "\t\t\t\t<get length=\"" + num + "\" name=" + "\"" + name + "\">" + "</get>\n";
 		return result;
 	}
-	
+
+	public String getvalue(String num, String name, String type){
+		String result = "\t\t\t\t<get length=\"" + num + "\" name=" + "\"" + name +  "\" type=\"" + type + "\">" + "</get>\n";
+		return result;
+	}
+
 	public void makeFile2(){
 		
 		
